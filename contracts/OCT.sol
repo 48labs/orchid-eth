@@ -16,12 +16,12 @@ contract ContractReceiver {
 
 /**
  * @title OCT
- * @dev The Orchid Token (MET) Ledger. Standard ERC20 Token, mintable before launch
+ * @dev The Orchid Token (OCT) Ledger. Standard ERC20 Token, mintable before launch
  */
 contract OCT is MintableToken {
 
-  string public constant name = "OCT";
-  string public constant symbol = "MET";
+  string public constant name = "Orchid Token";
+  string public constant symbol = "OCT";
   uint8 public constant decimals = 18;
 
   uint256 public constant INITIAL_SUPPLY = 0;
@@ -33,7 +33,7 @@ contract OCT is MintableToken {
     totalSupply = INITIAL_SUPPLY;
   }
 
-  /* We need a way for the Orchid user application to transfer both MET and data
+  /* We need a way for the Orchid user application to transfer both OCT and data
      to the Mineshaft when funding accounts for ticket creation.
 
      ERC223 provides this functionality, but since ERC223 as currently defined
@@ -41,7 +41,7 @@ contract OCT is MintableToken {
      recipients to implement `tokenFallback`
 
      This instead of implementing ERC223 we simply add functions for transfering
-     both MET and data, however we use the signature of the functions in ERC223
+     both OCT and data, however we use the signature of the functions in ERC223
      in case this is useful for someone.
 
      This ensures this ledger remains 100% ERC20 compatible.
